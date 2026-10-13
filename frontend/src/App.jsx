@@ -91,13 +91,23 @@ export default function App() {
         body: JSON.stringify({ request: inputPrompt.trim(), auto_run: true })
       });
       if (res.ok) {
-        const newTask = await res.json();
-        setInputPrompt('');
-        await fetchTasks(false);
-        selectTask(newTask);
+        const text = await res.text();
+        const newTask = text ? JSON.parse(text) : null;
+        if (newTask) {
+          setInputPrompt('');
+          await fetchTasks(false);
+          selectTask(newTask);
+        }
       } else {
-        const err = await res.json();
-        alert(`Error: ${err.detail || 'Failed to submit task'}`);
+        const text = await res.text();
+        let errMsg = 'Failed to submit task';
+        try {
+          const errObj = JSON.parse(text);
+          errMsg = errObj.detail || errMsg;
+        } catch {
+          if (text) errMsg = text;
+        }
+        alert(`Error: ${errMsg}`);
       }
     } catch (e) {
       alert(`Network error: ${e.message}`);
@@ -119,8 +129,15 @@ export default function App() {
         fetchTaskDetails(selectedTask.id);
         fetchTasks(false);
       } else {
-        const err = await res.json();
-        alert(`Action failed: ${err.detail}`);
+        const text = await res.text();
+        let errMsg = 'Action failed';
+        try {
+          const errObj = JSON.parse(text);
+          errMsg = errObj.detail || errMsg;
+        } catch {
+          if (text) errMsg = text;
+        }
+        alert(`Action failed: ${errMsg}`);
       }
     } catch (e) {
       alert(`Network error: ${e.message}`);
