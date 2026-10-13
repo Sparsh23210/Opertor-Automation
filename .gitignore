@@ -53,3 +53,8 @@ Thumbs.db
 .env.local
 *.pem
 *.key
+
+# Runtime test outputs and artifacts
+data/outputs/*
+!data/outputs/.gitkeep
+
