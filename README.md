@@ -1,17 +1,17 @@
-# ProofLoop: Hybrid Autonomous AI Operations Operator
+# AutoOperator: Hybrid Autonomous AI Operations Operator
 ## Evidence-Driven Autonomous Task Worker & Financial Reconciliation Engine
 
-ProofLoop is an evidence-driven, hybrid autonomous AI operator engineered to convert business requests into verifiable, audit-trailed company work. It initially focuses on invoice audit, purchase-order reconciliation, business operations reporting, and bounded browser verification.
+AutoOperator is an evidence-driven, hybrid autonomous AI operator engineered to convert business requests into verifiable, audit-trailed company work. It initially focuses on invoice audit, purchase-order reconciliation, business operations reporting, and bounded browser verification.
 
-Its central operational law is simple: **no evidence, no success claim**. After executing operations, ProofLoop reads generated records and artifacts back from the database or filesystem and independently verifies them against ground truth source records. It does not treat a successful tool HTTP return code or an LLM's statement as proof that a task succeeded.
+Its central operational law is simple: **no evidence, no success claim**. After executing operations, AutoOperator reads generated records and artifacts back from the database or filesystem and independently verifies them against ground truth source records. It does not treat a successful tool HTTP return code or an LLM's statement as proof that a task succeeded.
 
-Crucially, ProofLoop does not depend exclusively on an LLM. It implements a **three-tier hybrid architecture** combining Google Gemini LLM reasoning with deterministic rule-based execution and a manually maintained fallback workflow registry.
+Crucially, AutoOperator does not depend exclusively on an LLM. It implements a **three-tier hybrid architecture** combining Google Gemini LLM reasoning with deterministic rule-based execution and a manually maintained fallback workflow registry.
 
 ---
 
 ## 1. Project Objective & Core Capabilities
 
-ProofLoop completes real operations tasks end-to-end through a bounded execution loop:
+AutoOperator completes real operations tasks end-to-end through a bounded execution loop:
 $$\text{Goal} \longrightarrow \text{Understand} \longrightarrow \text{Plan} \longrightarrow \text{Execute} \longrightarrow \text{Observe} \longrightarrow \text{Adapt} \longrightarrow \text{Verify} \longrightarrow \text{Complete}$$
 
 - **Parses natural-language requests into structured tasks:** Identifies task intent, entities, dates, constraints, and success conditions.
