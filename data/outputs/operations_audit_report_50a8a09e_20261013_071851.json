@@ -1,0 +1,89 @@
+{
+  "sales_metrics": {
+    "total_rows": 7,
+    "unique_orders": 6,
+    "total_revenue_reported": 11150.0,
+    "total_revenue_calculated": 11010.0,
+    "sku_units_sold": {
+      "SKU-ALPHA": 27,
+      "SKU-BETA": 17,
+      "SKU-GAMMA": 20,
+      "SKU-DELTA": 8
+    }
+  },
+  "inventory_metrics": {
+    "total_skus": 4,
+    "total_inventory_value": 19110.0,
+    "items": [
+      {
+        "sku": "SKU-ALPHA",
+        "product_name": "Alpha Enterprise Hub",
+        "starting_stock": 100,
+        "units_sold": 27,
+        "expected_ending": 73,
+        "recorded_ending": 73,
+        "variance": 0,
+        "unit_cost": 90.0
+      },
+      {
+        "sku": "SKU-BETA",
+        "product_name": "Beta Cloud Gateway",
+        "starting_stock": 50,
+        "units_sold": 17,
+        "expected_ending": 33,
+        "recorded_ending": 33,
+        "variance": 0,
+        "unit_cost": 180.0
+      },
+      {
+        "sku": "SKU-GAMMA",
+        "product_name": "Gamma Sensor Pod",
+        "starting_stock": 200,
+        "units_sold": 20,
+        "expected_ending": 180,
+        "recorded_ending": 180,
+        "variance": 0,
+        "unit_cost": 25.0
+      },
+      {
+        "sku": "SKU-DELTA",
+        "product_name": "Delta Wireless Adapter",
+        "starting_stock": 40,
+        "units_sold": 8,
+        "expected_ending": 32,
+        "recorded_ending": 30,
+        "variance": -2,
+        "unit_cost": 70.0
+      }
+    ]
+  },
+  "anomalies": [
+    {
+      "row": 8,
+      "order_id": "ORD-101",
+      "sku": "SKU-ALPHA",
+      "details": "Duplicate order_id 'ORD-101' found in row 8"
+    },
+    {
+      "row": 6,
+      "order_id": "ORD-105",
+      "sku": "SKU-DELTA",
+      "type": "revenue_calculation_discrepancy",
+      "reported": 1100.0,
+      "calculated": 960.0,
+      "variance": 140.0
+    },
+    {
+      "sku": "SKU-DELTA",
+      "product_name": "Delta Wireless Adapter",
+      "expected": 32,
+      "recorded": 30,
+      "variance": -2,
+      "type": "inventory_variance"
+    }
+  ],
+  "source_files": [
+    "file:operations/sales_2026_q1.csv",
+    "file:operations/inventory_2026_q1.json"
+  ]
+}

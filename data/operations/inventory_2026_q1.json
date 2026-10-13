@@ -1,0 +1,30 @@
+[
+  {
+    "sku": "SKU-ALPHA",
+    "product_name": "Alpha Enterprise Hub",
+    "starting_stock": 100,
+    "ending_stock": 73,
+    "unit_cost": 90.0
+  },
+  {
+    "sku": "SKU-BETA",
+    "product_name": "Beta Cloud Gateway",
+    "starting_stock": 50,
+    "ending_stock": 33,
+    "unit_cost": 180.0
+  },
+  {
+    "sku": "SKU-GAMMA",
+    "product_name": "Gamma Sensor Pod",
+    "starting_stock": 200,
+    "ending_stock": 180,
+    "unit_cost": 25.0
+  },
+  {
+    "sku": "SKU-DELTA",
+    "product_name": "Delta Wireless Adapter",
+    "starting_stock": 40,
+    "ending_stock": 30,
+    "unit_cost": 70.0
+  }
+]
